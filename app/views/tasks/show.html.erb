@@ -1,0 +1,14 @@
+<h1><%= @task.title %></h1>
+<H2><%= @task.details %></H2>
+  <% if @task.completed? == true %>
+    <% @check_box = "checked" %>
+    <% else @unchecked_box = "This task is not checked yet"%>
+  <% end %>
+  <div>
+    <input type="checkbox" id="subscribeNews" name="subscribe" value="newsletter" <%=  @check_box %>>
+    <label for="subscribeNews"></label>
+     <%= @check_box%>
+     <%= @unchecked_box%>
+  </div>
+  <%= link_to "Edit this task", edit_task_path(@task) %>
+<div>

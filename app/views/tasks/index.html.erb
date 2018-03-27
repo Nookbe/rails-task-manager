@@ -1,0 +1,11 @@
+<h1> My Tasks </h1>
+
+<% @tasks.each do |task| %>
+  <div>
+    <input type="checkbox" id="subscribeNews" name="subscribe" value="newsletter" <%= task.completed? ? "checked" : "" %>>
+    <label for="subscribeNews"></label>
+    <%= link_to task.title, task_path(task) %>
+  </div>
+  <%= link_to "delete", task_path(task), method: :delete %>
+<% end %>
+<%= link_to "Add a new task", new_task_path %>
